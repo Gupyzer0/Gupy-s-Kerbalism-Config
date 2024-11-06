@@ -1,112 +1,4 @@
 //=======================================================
-// Biological Experiments x
-//=======================================================
-bd_bioexp
-
-Spacelines_BioExp1 -> Small fruit flies and other critters
-Spacelines_BioExp2 -> Dogs, monkeys . . .
-
-//=======================================================
-// Visible Imaging Experiments x
-//=======================================================
-bd_weather -> depends on tier
-bd_camera -> depends on tier
-bd_SiteSurvey -> depends on tier
-
-RP0visibleImaging1 -> Video Imaging -> Ranger Block 2 camera
-RP0visibleImaging2 -> TV Cameras on Mariner 4
-RP0visibleImaging3 -> TV Cameras on Mariner 10 and Viking
-RP0visibleImaging4 -> Solid-State Imager on Galileo
-RP0visibleImaging5 -> HiRISE on MRO
-
-Tier dependant Imaging
---------------------------
-Tiers 1 - 2 - 3 - 4 -> Spacelines_VisibleImaging1
-Tiers 5 - 6 - 7 -> Spacelines_VisibleImaging2
-Tiers 8 -> Spacelines_VisibleImaging3
-Tiers 9 -> Spacelines_VisibleImaging4
-Tiers 10 -> Spacelines_VisibleImaging5
-
-//=======================================================
-// Cosmic Ray Stuff x
-//=======================================================
-bd_GeigerCounter -> Spacelines_CosmicRays1
-
-bd_cosmicRay -> Spacelines_CosmicRays2
-bd_TrappedRadiation -> Spacelines_CosmicRays2
-
-
-//=======================================================
-// IMAGING SPECTROMETRY x
-//=======================================================
-bd_IRspec -> IR spectrometry  | Spacelines_IRSpectrometry
-bd_UVspec -> UV spectrometer  | Spacelines_UVSpectrometry
-bd_microwaveSpec -> Microwave Spectrometry | Spacelines_MicrowaveSpectrometry
-
-bd_multiSpec -> Multispectral Imaging -> Spacelines_MultiSpectralSpectrometry (includes IR + UV)
-dmImagingPlatform (DMOS) -> Spacelines_MultiSpectralSpectrometry
-
-bd_gammaRay -> Gamma Ray Spectrometry | Spacelines_GammaRaySpectrometry
-
-
-//=======================================================
-// INFRARED RADIOMETRY x
-//=======================================================
-bd_IRradiometer -> Spacelines_IRRadiometer
-
-//=======================================================
-// MAGNETOMETER EXPERIMENTS x
-//=======================================================
-magnetometer (stock)
-magScan (DMOS)
-bd_magScan
-
-Spacelines_Magnetometer
-Spacelines_MagneticFluxAnalysis
-Spacelines_MagneticFieldMapping
-Spacelines_LongTermMagneticFieldAnalysis
-
-//=======================================================
-// MASS SPECTROMETRY x
-//=======================================================
-bd_massSpec -> Spacelines_MassSpectrometry
-
-//=======================================================
-// MICROMETEORITE EXPERIMENTS x
-//=======================================================
-logmmImpacts
-bd_dust -> MMeteroid detector on Helios
-bd_pegasus
-
-micrometeoriteDetect
-+LargeSurfaceMicrometeoriteDetect
-
-//=======================================================
-// ORBITAL PERTURBATION x
-//=======================================================
-gravityScan -> stock
-
-RP0orbitalPurturbation1 -> Orbital Perturbation Experiment
-
-//=======================================================
-// PLANETARY PHOTOGRAPHY
-//=======================================================
-dmReconScan (DMOS)
-bd_mapping (KH1 / KH4)
-bd_surveillance (Gambit)
-
-RP0photos1 -> V-2 launched film camera
-RP0photos1a -> KH-1 early orbital photography
-RP0photos2 -> A KH-4/Zenit Style Experiment
-RP0photos3 -> Gambit | Hexagon
-RP0photos4 -> KH-11 and Hubble sized satellites
-
-//=======================================================
-// PRESSURE SCAN
-//=======================================================
-barometerScan -> stock
-
-//=======================================================
 // RADIO AND PLASMA WAVE SCIENCE 1
 //=======================================================
 rpwsScan (DMOS)
@@ -116,31 +8,15 @@ RP0RPWS1 -> bluedog_Pioneer6_MainAntenna (65)
 RP0RPWS2 -> Solar Wind Analyzer on Helios-A (74)
 RP0RPWS3 -> RPWS on Cassini (97)
 
-
 //=======================================================
 // Surface Sample
 //=======================================================
-surfaceSample -> stock
 bd_poke -> ALSEP penetrometer test
-dmXRayDiffract (DMOS) -> has a sampler version -> X-Ray Diffraction Scan
-bd_XRayDiffract -> X-Ray Diffraction Scan -> has a sampler version -> make a detailed analysis of the mineral composition of the surface
-bd_soilScoop
-bd_drill
-
-
-surfaceSample ->Scoop from Surveyor
-surfaceAnalysis ??
-surfaceSample2 ??
-surfaceSample3 -> Deep Surface Sample
 
 //=======================================================
 // Surface Studies (dont require a sample but to be close to the surface)
 //=======================================================
 dmNAlbedoScan (DMOS) -> Surface Hydrogen Scan
-dmXRayDiffract (DMOS) -> X-Ray Diffraction Scan
-dmlaserblastscan (DMOS) -> Laser Surface Scan
-bd_XRayDiffract -> X-Ray Diffraction Scan -> make a detailed analysis of the mineral composition of the surface
-
 
 //=======================================================
 // Telemetry Report
@@ -194,10 +70,10 @@ cometSample_interstellar (stock) -> comet sample with kerbal
 # dmAsteroidScan (DMOS) -> Maybe not include this one
 
 =====================================================
-Atmospheric Experiments
+Barometer Scan
 =====================================================
-bd_hydrometer -> Atmospheric Moisture Sensor Data (SrfLanded, SrfSplashed, FlyingLow, FlyingHigh) -> Spacelines_Hydrometer
-atmosphereAnalysis (stock) -> Atmosphere Analysis -> Spacelines_AtmosphereAnalysis
+barometerScan -> stock
+
 
 --------------------------------------------------------
 Other stuff
@@ -207,8 +83,6 @@ bd_SoilMoisture -> moisture sensor from orbit -> Spacelines_SoilMoisture
 dmSoilMoisture (DMOS)
 
 bd_Photometer -> Photometry Data -> Spacelines_Photometer
-
-
 
 bd_ionElec -> Ionization and Electrostatic Analysis -> Spacelines_IonElec
 
