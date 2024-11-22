@@ -1,14 +1,4 @@
 //=======================================================
-// RADIO AND PLASMA WAVE SCIENCE 1
-//=======================================================
-rpwsScan (DMOS)
-bd_rpws
-
-RP0RPWS1 -> bluedog_Pioneer6_MainAntenna (65)
-RP0RPWS2 -> Solar Wind Analyzer on Helios-A (74)
-RP0RPWS3 -> RPWS on Cassini (97)
-
-//=======================================================
 // Surface Sample
 //=======================================================
 bd_poke -> ALSEP penetrometer test
