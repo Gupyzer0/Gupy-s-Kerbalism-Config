@@ -33,9 +33,6 @@ scopeScan (DMOS) -> Unmanned -------|
 
 bd_oso -> Orbital Sun Observations -> Spacelines_OrbitalSunObservations
 bd_atm -> manned -> Solar Telescope Mount Observations (EOSS | Skylab | Apollo Scope) -> Spacelines_CrewedOrbitalSunObservations
-bd_kepler -> Exoplanetary Transit Observations -> Spacelines_ExoplanetaryTransitObservations
-
-
 
 // =======================================================
 // Solar Wind
@@ -71,8 +68,6 @@ Other stuff
 
 bd_SoilMoisture -> moisture sensor from orbit -> Spacelines_SoilMoisture
 dmSoilMoisture (DMOS)
-
-bd_Photometer -> Photometry Data -> Spacelines_Photometer
 
 bd_ionElec -> Ionization and Electrostatic Analysis -> Spacelines_IonElec
 
