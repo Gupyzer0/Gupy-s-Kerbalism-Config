@@ -22,14 +22,7 @@ temperatureScan -> stock
 // Astronomy
 // ==========================================================
 
-Spacelines_GammaRayAstronomy -> For Explorer 11 -----------------------------|
-bd_XrayImaging -> X-Ray Imaging -> Spacelines_XrayAstronomy                  |
-bd_UVscope -> High Resolution Ultraviolet Imaging -> Spacelines_UVAstronomy  |-> Astronomy experiments
-infraredTelescope (stock) -> Spacelines_InfraredAstronomy -------------------| 
-
-bd_orbitalScope -> manned ----------|
-bd_TelescopeObservation -> manned   |----> Spacelines_VisibleAstronomy
-scopeScan (DMOS) -> Unmanned -------|
+Make some "Spacelines_VisibleAstronomy" experiments to require manned presence
 
 bd_oso -> Orbital Sun Observations -> Spacelines_SunObservations -----------------------|->Spacelines_SunObservations1
 bd_atm -> manned -> Solar Telescope Mount Observations (EOSS | Skylab | Apollo Scope)---|->Spacelines_SunObservations2
