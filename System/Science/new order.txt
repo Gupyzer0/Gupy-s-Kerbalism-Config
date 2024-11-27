@@ -25,7 +25,44 @@ temperatureScan -> stock
 Make some "Spacelines_VisibleAstronomy" experiments to require manned presence
 
 bd_oso -> Orbital Sun Observations -> Spacelines_SunObservations -----------------------|->Spacelines_SunObservations1
+bd_oso
+{
+    ECCost = 0.05	
+    size = 190 						
+    value = 9 
+    SetupMass =
+    SetupCost =			
+    duration = 453600
+    UnlockTech = 
+    requirements =
+    ResourceRates =
+    CrewRequirement =
+}
+
+KERBALISM_EXPERIMENT
+{
+    Situation = Space
+    BodyNotAllowed = Suns
+}
+
+
 bd_atm -> manned -> Solar Telescope Mount Observations (EOSS | Skylab | Apollo Scope)---|->Spacelines_SunObservations2
+bd_atm
+{
+    ECCost = 0.075
+    size = 1917						
+    value = 14								
+    duration = 3888000 				
+    requirements = 
+    ResourceRates =
+    CrewRequirement = 
+}
+
+KERBALISM_EXPERIMENT 
+{
+    Situation = InSpaceLow
+    Situation = InSpaceHigh
+}
 
 // =======================================================
 // Solar Wind
@@ -33,27 +70,80 @@ bd_atm -> manned -> Solar Telescope Mount Observations (EOSS | Skylab | Apollo S
 bd_solarWind -> Solar wind measurements ->  Spacelines_SolarWind
 dmSolarParticles (DMOS)
 
+bd_solarWind
+{
+    ECCost = 0.05	
+    size = 11504.44
+    value = 300
+    SetupMass =
+    SetupCost =			
+    duration = 31556952
+    UnlockTech = 
+    requirements =
+    ResourceRates =
+    CrewRequirement =
+}
+
+Storm
+InnerBelt
+OuterBelt
+Magnetosphere
+Interstellar
+
+VirtualBiome = NoBiome
+VirtualBiome = InnerBelt
+VirtualBiome = OuterBelt
+VirtualBiome = Magnetosphere
+VirtualBiome = Storm
+
+Situation = FlyingHigh
+Situation = Space@VirtualBiomes
+
+
 ====================================================
 SIGINT
 ====================================================
 bd_SIGINT -> shhhhhhhhhh!!! -> Spacelines_SIGINT
 dmSIGINT (DMOS)
 
-=====================================================
-Asteroid and Comets Samples
-=====================================================
-asteroidSample (stock) -> asteroid sample with kerbal
-cometSample_short (stock) -> comet sample with kerbal
-cometSample_intermediate (stock) -> comet sample with kerbal
-cometSample_long (stock) -> comet sample with kerbal
-cometSample_interstellar (stock) -> comet sample with kerbal
-# dmAsteroidScan (DMOS) -> Maybe not include this one
+bd_SIGINT
+		{
+			ECCost = 5
+			size = 76696.26969 						
+			value = 2800 
+			SetupMass =
+			SetupCost =			
+			duration = 220898664                  
+			UnlockTech = 
+			requirements =
+			ResourceRates =
+			CrewRequirement =
+		}
+ s
 
 =====================================================
 Barometer Scan
 =====================================================
 barometerScan -> stock
+barometerScan
+{
+    ECCost = 0.05
+    size = 0.25 						
+    value = 4								
+    duration = 600 				
+    requirements =
+    ResourceRates =
+    CrewRequirement = 
+}
 
+KERBALISM_EXPERIMENT //Not sure if this should be biome based or hemisphere based...
+	{
+		BodyAllowed = Atmospheric
+		
+		Situation = Surface@Biomes
+		Situation = FlyingLow@Biomes
+		Situation = FlyingHigh
+	}
 
 --------------------------------------------------------
 Other stuff
@@ -62,13 +152,103 @@ Other stuff
 bd_SoilMoisture -> moisture sensor from orbit -> Spacelines_SoilMoisture
 dmSoilMoisture (DMOS)
 
+bd_SoilMoisture
+{
+    ECCost = 0.075
+    size = 81920
+    value = 14
+    duration = 1944000 		
+    requirements = 
+    ResourceRates =
+    CrewRequirement = 
+}
+KERBALISM_EXPERIMENT 
+{
+    Situation = InSpaceLow@Biomes
+    Situation = InSpaceHigh
+}
+
+
 bd_ionElec -> Ionization and Electrostatic Analysis -> Spacelines_IonElec
+bd_ionElec
+		{
+			ECCost = 0.05
+			size = 1.5 						
+			value = 5								
+			duration = 3600 				
+			requirements =
+			ResourceRates =
+			CrewRequirement = 
+		}
+
+        KERBALISM_EXPERIMENT //Not sure if this should be biome based or hemisphere based...
+	{		
+			
+		VirtualBiome = NoBiome
+		VirtualBiome = InnerBelt
+		VirtualBiome = OuterBelt
+		VirtualBiome = Magnetosphere
+		VirtualBiome = Storm
+		
+		Situation = FlyingHigh
+		Situation = Space@VirtualBiomes
+	}
 
 bd_radarAltimeter -> Mehm just a radar altimeter -> Spacelines_RadarAltimeter
+bd_radarAltimeter
+{
+    ECCost = 0.05
+    size = 1.5 						
+    value = 12
+    duration = 3600 	
+    requirements = 
+    ResourceRates =
+    CrewRequirement = 
+}
+KERBALISM_EXPERIMENT 
+{
+    Situation = Space@Biomes
+}
+
 
 bd_Scatterometer -> Radar Scatterometry Data -> Spacelines_Scatterometer
+bd_Scatterometer
+{
+    ECCost = 0.1
+    size = 81920
+    value = 14
+    duration = 1944000 		
+    requirements = 
+    ResourceRates =
+    CrewRequirement = 
+}
+KERBALISM_EXPERIMENT 
+{
+    Situation = InSpaceLow
+}
 
 seismicScan (stock) -> Seismic scan -> Spacelines_SeismicScan
 dmseismicHammer (DMOS)
+seismicScan
+{
+    ECCost = 0.05	
+    size = 38348.13485						
+    value = 75								
+    duration = 92035450 
+    SetupMass =
+    SetupCost =
+    UnlockTech = science8
+    requirements =
+    ResourceRates =
+    CrewRequirement =
+}
 
+KERBALISM_EXPERIMENT
+{
+    VirtualBiome = NorthernHemisphere
+    VirtualBiome = SouthernHemisphere
 
+    Situation = Surface@VirtualBiomes
+    
+    BodyNotAllowed = HomeBody
+}
