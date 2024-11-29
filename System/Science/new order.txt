@@ -4,14 +4,8 @@
 bd_poke -> ALSEP penetrometer test
 
 //=======================================================
-// Surface Studies (dont require a sample but to be close to the surface)
+// Kerbalism experiments
 //=======================================================
-dmNAlbedoScan (DMOS) -> Surface Hydrogen Scan
-
-//=======================================================
-// Telemetry Report
-//=======================================================
-kerbalism_TELEMETRY
 
 //=======================================================
 // TEMPERATURE SCAN
@@ -151,6 +145,7 @@ Other stuff
 
 bd_SoilMoisture -> moisture sensor from orbit -> Spacelines_SoilMoisture
 dmSoilMoisture (DMOS)
+dmNAlbedoScan (DMOS) -> Surface Hydrogen Scan
 
 bd_SoilMoisture
 {
@@ -252,3 +247,6 @@ KERBALISM_EXPERIMENT
     
     BodyNotAllowed = HomeBody
 }
+
+
+bd_dust ???
