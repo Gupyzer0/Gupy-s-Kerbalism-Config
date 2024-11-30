@@ -18,45 +18,6 @@ temperatureScan -> stock
 
 Make some "Spacelines_VisibleAstronomy" experiments to require manned presence
 
-bd_oso -> Orbital Sun Observations -> Spacelines_SunObservations -----------------------|->Spacelines_SunObservations1
-bd_oso
-{
-    ECCost = 0.05	
-    size = 190 						
-    value = 9 
-    SetupMass =
-    SetupCost =			
-    duration = 453600
-    UnlockTech = 
-    requirements =
-    ResourceRates =
-    CrewRequirement =
-}
-
-KERBALISM_EXPERIMENT
-{
-    Situation = Space
-    BodyNotAllowed = Suns
-}
-
-
-bd_atm -> manned -> Solar Telescope Mount Observations (EOSS | Skylab | Apollo Scope)---|->Spacelines_SunObservations2
-bd_atm
-{
-    ECCost = 0.075
-    size = 1917						
-    value = 14								
-    duration = 3888000 				
-    requirements = 
-    ResourceRates =
-    CrewRequirement = 
-}
-
-KERBALISM_EXPERIMENT 
-{
-    Situation = InSpaceLow
-    Situation = InSpaceHigh
-}
 
 // =======================================================
 // Solar Wind
@@ -142,26 +103,7 @@ KERBALISM_EXPERIMENT //Not sure if this should be biome based or hemisphere base
 --------------------------------------------------------
 Other stuff
 --------------------------------------------------------
-
-bd_SoilMoisture -> moisture sensor from orbit -> Spacelines_SoilMoisture
-dmSoilMoisture (DMOS)
 dmNAlbedoScan (DMOS) -> Surface Hydrogen Scan
-
-bd_SoilMoisture
-{
-    ECCost = 0.075
-    size = 81920
-    value = 14
-    duration = 1944000 		
-    requirements = 
-    ResourceRates =
-    CrewRequirement = 
-}
-KERBALISM_EXPERIMENT 
-{
-    Situation = InSpaceLow@Biomes
-    Situation = InSpaceHigh
-}
 
 
 bd_ionElec -> Ionization and Electrostatic Analysis -> Spacelines_IonElec
