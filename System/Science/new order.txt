@@ -1,59 +1,3 @@
-//=======================================================
-// Surface Sample
-//=======================================================
-bd_poke -> ALSEP penetrometer test
-
-//=======================================================
-// Kerbalism experiments
-//=======================================================
-
-//=======================================================
-// TEMPERATURE SCAN
-//=======================================================
-temperatureScan -> stock
-
-// ==========================================================
-// Astronomy
-// ==========================================================
-
-Make some "Spacelines_VisibleAstronomy" experiments to require manned presence
-
-
-// =======================================================
-// Solar Wind
-// =======================================================
-bd_solarWind -> Solar wind measurements ->  Spacelines_SolarWind
-dmSolarParticles (DMOS)
-
-bd_solarWind
-{
-    ECCost = 0.05	
-    size = 11504.44
-    value = 300
-    SetupMass =
-    SetupCost =			
-    duration = 31556952
-    UnlockTech = 
-    requirements =
-    ResourceRates =
-    CrewRequirement =
-}
-
-Storm
-InnerBelt
-OuterBelt
-Magnetosphere
-Interstellar
-
-VirtualBiome = NoBiome
-VirtualBiome = InnerBelt
-VirtualBiome = OuterBelt
-VirtualBiome = Magnetosphere
-VirtualBiome = Storm
-
-Situation = FlyingHigh
-Situation = Space@VirtualBiomes
-
 
 ====================================================
 SIGINT
@@ -75,30 +19,6 @@ bd_SIGINT
 			CrewRequirement =
 		}
  s
-
-=====================================================
-Barometer Scan
-=====================================================
-barometerScan -> stock
-barometerScan
-{
-    ECCost = 0.05
-    size = 0.25 						
-    value = 4								
-    duration = 600 				
-    requirements =
-    ResourceRates =
-    CrewRequirement = 
-}
-
-KERBALISM_EXPERIMENT //Not sure if this should be biome based or hemisphere based...
-	{
-		BodyAllowed = Atmospheric
-		
-		Situation = Surface@Biomes
-		Situation = FlyingLow@Biomes
-		Situation = FlyingHigh
-	}
 
 --------------------------------------------------------
 Other stuff
