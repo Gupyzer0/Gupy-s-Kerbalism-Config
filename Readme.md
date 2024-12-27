@@ -10,3 +10,10 @@ A Kerbalism config based on Skyhawk Science System and ROKerbalism to work mainl
 ### Requires
 - Bluedog Design Bureau
 - [Spacelines Tech Tree](https://github.com/Gupyzer0/Spacelines_Tree)
+
+### Contains work from
+- Kerbalism
+- ROKerbalism
+- RP-1
+- Skyhawk Kerbalism
+- Skyhawk Science System
